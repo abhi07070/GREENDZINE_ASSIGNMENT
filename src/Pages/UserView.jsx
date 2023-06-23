@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { UilSearch } from '@iconscout/react-unicons'
 
 const UserView = () => {
     const [postInfo, setPostInfo] = useState([]);
@@ -9,7 +10,6 @@ const UserView = () => {
         axios.get("https://reqres.in/api/users?page=2")
             .then(response => {
                 setPostInfo(response.data.data);
-                console.log(response.data);
             }).catch(err => {
                 console.log(err);
             });
@@ -27,7 +27,10 @@ const UserView = () => {
         <div className='container'>
             <div className='mw'>
                 <div className='search'>
-                    <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search by username" />
+                    <input type="text" value={searchTerm} onChange={handleSearch} />
+                    <div className='searchIcon'>
+                        <UilSearch />
+                    </div>
                 </div>
                 <div className='grid'>
                     {filteredUsers.map((data, key) => (

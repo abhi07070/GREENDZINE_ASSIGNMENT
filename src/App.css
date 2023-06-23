@@ -58,19 +58,26 @@ img {
 }
 
 .search {
+  display: flex;
   padding: 2rem 0;
   padding-left: 28px;
-  text-align: start;
+  position: relative;
 }
-
+.search .searchIcon{
+  position: absolute;
+  left: 260px;
+  top: 52%;
+  transform: translate(-50%,-50%);
+}
 .search input {
-  background: transparent;
-  border: 2px solid #000;
+  background: #F9F1FD;
+  border: 0;
   border-radius: 20px;
   font-size: .9rem;
-  padding: 10px;
+  padding: 10px 40px;
   outline: 0;
 }
+
 
 @media screen and (max-width:1050px) {
 
@@ -85,10 +92,6 @@ img {
 }
 
 @media screen and (max-width:700px) {
-  .search {
-    padding: 2rem 0;
-    text-align: center;
-  }
   .grid {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
